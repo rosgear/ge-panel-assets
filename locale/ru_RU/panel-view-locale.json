@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Навигация" },
+            "dashboard": { "title": "Панель инструментов" },
+            "tab": {
+                "close": { "tooltip": "Закрыть вкладку" },
+                "next": { "tooltip": "Следущая вкладка" },
+                "prev": { "tooltip": "Предыдущая вкладка" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Обновить список" },
+                "collapse": { "tooltip": "Свернуть элементы списка" },
+                "expand": { "tooltip": "Развернуть элементы списка" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Удалить" },
+            "add": { "text": "Добавить" }
+        }
+    }
+}

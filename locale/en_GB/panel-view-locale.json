@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Navigation" },
+            "dashboard": { "title": "Toolbar" },
+            "tab": {
+                "close": { "tooltip": "Close tab" },
+                "next": { "tooltip": "Next tab" },
+                "prev": { "tooltip": "Previous tab" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Refresh list" },
+                "collapse": { "tooltip": "Collapse list items" },
+                "expand": { "tooltip": "Expand list items" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Delete" },
+            "add": { "text": "Add" }
+        }
+    }
+}
