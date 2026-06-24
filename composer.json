@@ -1,0 +1,25 @@
+{
+    "name": "rosgear/ge-panel-assets",
+    "description": "GePanel Control Panel resources",
+    "keywords": ["rosgear", "gepanel", "assets"],
+    "homepage": "https://github.com/rosgear/ge-panel-assets/",
+    "type": "ge",
+    "license": "LGPL 3.0 license",
+    "authors": [
+        {
+            "name": "Anton Tivonenko",
+            "email": "anton.tivonenko@gmail.com",
+            "homepage": "https://rosgear.ru/"
+        }
+    ],
+    "require": {
+        "rosgear/ge2-composer-plugin": "*"
+    },
+    "extra": {
+        "ge": {
+            "path": "/public/vendors/ge/panel"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
