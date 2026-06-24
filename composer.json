@@ -4,7 +4,7 @@
     "keywords": ["rosgear", "gepanel", "assets"],
     "homepage": "https://github.com/rosgear/ge-panel-assets/",
     "type": "ge",
-    "license": "LGPL 3.0 license",
+    "license": "LGPL-3.0-or-later",
     "authors": [
         {
             "name": "Anton Tivonenko",
