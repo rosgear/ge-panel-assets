@@ -5,7 +5,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/rosgear/ge-panel-assets.svg)](https://packagist.org/packages/rosgear/ge-panel-assets)
 [![Total Downloads](https://img.shields.io/packagist/dt/rosgear/ge-panel-assets.svg)](https://packagist.org/packages/rosgear/ge-panel-assets)
 [![Source Code](https://img.shields.io/badge/source-rosgear/ge--panel--assets-blue.svg)](https://github.com/rosgear/ge-panel-assets)
-[![Software License](https://img.shields.io/badge/license-GPL--2.0%20license-brightgreen.svg)](https://github.com/rosgear/ge-panel-assets/blob/master/LICENSE)
+[![Software License](https://img.shields.io/badge/license-GPL--3.0%20license-brightgreen.svg)](https://github.com/rosgear/ge-panel-assets/blob/master/LICENSE)
 ![php 8.2+](https://img.shields.io/badge/php-min%208.2-red.svg)
 
 <a name="русский"></a>
