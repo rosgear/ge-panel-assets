@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Nawigacja" },
+            "dashboard": { "title": "Pasek narzędzi" },
+            "tab": {
+                "close": { "tooltip": "Zamknij kartę" },
+                "next": { "tooltip": "Następna zakładka" },
+                "prev": { "tooltip": "Poprzednia zakładka" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Aktualizuj listę" },
+                "collapse": { "tooltip": "Zwiń elementy listy" },
+                "expand": { "tooltip": "Rozwiń elementy listy" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Usuwać" },
+            "add": { "text": "Dodać" }
+        }
+    }
+}

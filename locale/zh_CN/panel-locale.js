@@ -1,0 +1,339 @@
+/**
+ * Пакет китайской (традиционной) локализации.
+ 
+ * Этот файл является частью GePanel.
+ *
+ * Copyright (c) 2026 RosGear
+ * 
+ * Contact: https://rosgear.ru/
+ *
+ * @author    Anton Tivonenko
+ * @copyright (c) 2026, by Anton Tivonenko, anton.tivonenko@rosgear.ru
+ * @date      Nov 01, 2026
+ * @version   $Id: 1.0 $
+ *
+ * @license panel-locale.js is licensed under the terms of the Open Source
+ * LGPL 3.0 license. Commercial use is permitted to the extent that the
+ * code/component(s) do NOT become part of another Open Source or Commercially
+ * development library or toolkit without explicit permission.
+ */
+
+Ext.onReady(function(){
+    if(Ext.Date) {
+        Ext.Date.monthNames = [ 
+            "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"
+        ];
+        Ext.Date.shortMonthNames = [
+            "1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"
+        ];
+        Ext.Date.getShortMonthName = function(a){return Ext.Date.shortMonthNames[a]};
+        Ext.Date.monthNumbers = {"1月":0,"2月":1,"3月":2,"4月":3,"5月":4,"6月":5,"7月":6,"8月":7,"9月":8,"10月":9,"11月":10,"12月":11};
+        Ext.Date.getMonthNumber = function(a){return Ext.Date.monthNumbers[a.substring(0,1).toUpperCase()+a.substring(1,3).toLowerCase()]};
+        Ext.Date.dayNames = [
+            "星期日","星期一","星期二","星期三","星期四","星期五","星期六"
+        ];
+        Ext.Date.getShortDayName = function(a){
+            return Ext.Date.dayNames[a].substring(0,3)
+        }
+    }
+    if(Ext.util&&Ext.util.Format) {
+        Ext.apply(Ext.util.Format, {
+            thousandSeparator:".",
+            decimalSeparator:",",
+            currencySign:"\u0440\u0443\u0431",
+            dateFormat:"d.m.Y"
+        });
+    }
+});
+
+Ext.define("Ext.locale.ru.view.View",{
+    override:"Ext.view.View",
+    emptyText:""
+});
+Ext.define("Ext.locale.ru.grid.plugin.DragDrop",{
+    override:"Ext.grid.plugin.DragDrop",
+    dragText:"{0} 個選定行"
+});
+Ext.define("Ext.locale.ru.tab.Tab",{
+    override:"Ext.tab.Tab",
+    closeText:"關閉此選項卡"
+});
+Ext.define("Ext.locale.ru.form.field.Base",{
+    override:"Ext.form.field.Base",
+    invalidText:"該欄位中的值不正確"
+});
+Ext.define("Ext.locale.ru.view.AbstractView",{
+    override:"Ext.view.AbstractView",
+    loadingText:"載入中..."
+});
+Ext.define("Ext.locale.ru.picker.Date",{
+    override:"Ext.picker.Date",
+    todayText:"今天",
+    minText:"該日期早於最短日期",
+    maxText:"該日期晚於最大日期",
+    disabledDaysText:"無法使用",
+    disabledDatesText:"無法使用",
+    nextText:"下個月（Control+右鍵）",
+    prevText:"上個月（Control+左鍵）",
+    monthYearText:"選擇月份（Control+向上/向下選擇年份）",
+    todayTip:"{0} (空間)",
+    format:"d.m.y",
+    startDay:1
+});
+Ext.define("Ext.locale.ru.picker.Month",{
+    override:"Ext.picker.Month",
+    okText:"&#160;OK&#160;",
+    cancelText:"取消"
+});
+Ext.define("Ext.locale.ru.toolbar.Paging",{
+    override:"Ext.PagingToolbar",
+    beforePageText:"頁",
+    afterPageText:"來自{0}",
+    firstText:"第一頁",
+    prevText:"上一頁",
+    nextText:"下一頁",
+    lastText:"最後一頁",
+    refreshText:"更新",
+    displayMsg:"顯示從{0}到{1}的記錄，總計{2}",
+    emptyMsg:"無數據可顯示"
+});
+Ext.define("Ext.locale.ru.form.field.Text",{
+    override:"Ext.form.field.Text",
+    minLengthText:"此欄位的最小長度為 {0}",
+    maxLengthText:"此欄位的最大長度為 {0}",
+    blankText:"此欄位是必需的",
+    regexText:"",
+    emptyText:null
+});
+Ext.define("Ext.locale.ru.form.field.Number",{
+    override:"Ext.form.field.Number",
+    minText:"該欄位的值不能小於{0}",
+    maxText:"該欄位的值不能大於{0}",
+    nanText:"{0} 不是數字",
+    negativeText:"該值不能為負數"
+});
+Ext.define("Ext.locale.ru.form.field.Date",{
+    override:"Ext.form.field.Date",
+    disabledDaysText:"無法使用",
+    disabledDatesText:"無法使用",
+    minText:"此欄位中的日期必須晚於 {0}",
+    maxText:"此欄位中的日期必須早於 {0}",
+    invalidText:"{0} 不是有效日期 - 日期必須採用 {1} 格式",
+    format:"d.m.y",
+    altFormats:"d.m.y|d/m/Y|d-m-y|d-m-Y|d/m|d-m|dm|dmy|dmY|d|Y-m-d"
+});
+Ext.define("Ext.locale.ru.form.field.ComboBox",{
+    override:"Ext.form.field.ComboBox",
+    valueNotFoundText:undefined
+}, function(){
+    Ext.apply(Ext.form.field.ComboBox.prototype.defaultListConfig,{
+        loadingText:"載入中..."
+    })
+});
+Ext.define("Ext.locale.ru.form.field.VTypes",{
+    override:"Ext.form.field.VTypes",
+    emailText:'此欄位必須包含格式為「user@example.com」的電子郵件地址',
+    urlText:'此欄位必須包含格式為「http://www.example.com」的 URL',
+    alphaText:'此欄位只能包含拉丁字母和底線字元「_」',
+    alphanumText:'此欄位只能包含拉丁字母、數字和底線字元「_」'
+});
+Ext.define("Ext.locale.ru.form.field.HtmlEditor",{
+    override:"Ext.form.field.HtmlEditor",
+    createLinkText:"請輸入您的地址："
+}, function(){
+    Ext.apply(Ext.form.field.HtmlEditor.prototype,{
+        buttonTips:{
+            bold:{
+                title:"大膽的 (Ctrl+B)",
+                text:"對選定的文字套用粗體。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            italic:{
+                title:"斜體 (Ctrl+I)",
+                text:"將斜體樣式套用至選取的文字。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            underline:{
+                title:"底線 (Ctrl+U)",
+                text:"為所選文字新增底線。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            increasefontsize:{
+                title:"增加尺寸",
+                text:"增加字體大小。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            decreasefontsize:{
+                title:"縮小尺寸",
+                text:"減小字體大小。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            backcolor:{
+                title:"充滿",
+                text:"變更所選文字或段落的背景顏色。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            forecolor:{
+                title:"文字顏色",
+                text:"變更文字顏色。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            justifyleft:{
+                title:"文字左對齊",
+                text:"將文字左對齊。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            justifycenter:{
+                title:"居中",
+                text:"將文字居中對齊。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            justifyright:{
+                title:"文字右對齊",
+                text:"將文字右對齊。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            insertunorderedlist:{
+                title:"標記",
+                text:"開始項目符號清單。",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"},
+                insertorderedlist:{
+                    title:"編號",
+                    text:"開始一個編號清單。",
+                    cls:Ext.baseCSSPrefix+"html-editor-tip"
+                },
+                createlink:{
+                    title:"插入超連結",
+                    text:"從選定的文字建立連結。",
+                    cls:Ext.baseCSSPrefix+"html-editor-tip"
+                },
+                sourceedit:{
+                    title:"原始碼",
+                    text:"切換到原始碼。",
+                    cls:Ext.baseCSSPrefix+"html-editor-tip"
+                }
+            }
+        }
+    )
+});
+Ext.define("Ext.locale.ru.form.Basic",{
+    override:"Ext.form.Basic",
+    waitTitle:"請稍等..."
+});
+Ext.define("Ext.locale.ru.grid.header.Container",{
+    override:"Ext.grid.header.Container",
+    sortAscText:"升序排序",
+    sortDescText:"降序排序",
+    lockText:"冷凍柱",
+    unlockText:"解凍列",
+    columnsText:"專欄"
+});
+Ext.define("Ext.locale.ru.grid.GroupingFeature",{
+    override:"Ext.grid.feature.Grouping",
+    emptyGroupText:"(空的)",
+    groupByText:"按此欄位分組",
+    showGroupsText:"按組顯示"
+});
+Ext.define("Ext.locale.ru.grid.PropertyColumnModel",{
+    override:"Ext.grid.PropertyColumnModel",
+    nameText:"姓名",
+    valueText:"意義",
+    dateFormat:"d.m.Y"
+});
+Ext.define("Ext.locale.ru.window.MessageBox",{
+    override:"Ext.window.MessageBox",
+    buttonText:{
+        ok:"OK",
+        cancel:"取消",
+        yes:"是的",
+        no:"不"
+    }});
+Ext.define("Ext.locale.ru.form.field.File",{
+    override:"Ext.form.field.File",
+    buttonText:"審查..."
+});
+Ext.define("Ext.locale.ru.Component",{
+    override:"Ext.Component"
+});
+
+Ext.Txt = {
+    message: '資訊',
+    confirmation: '確認',
+    warning: '警告',
+    error: '錯誤',
+    errorConnect: '連線錯誤',
+    loading: '載入中...',
+    waiting: '請稍等...',
+    sendErrorReport: '<div class="g-message-box__report">將錯誤發送給技術支援？</div>',
+    serverDidNotAnswer: '我們的請求，伺服器沒有回應（伺服器錯誤或請求遺失）.',
+    serverErrorConnection: '由於網路連接不穩定或與伺服器缺乏通信，可能會出現連接到伺服器的錯誤。請稍後重試。'
+};
+
+Ext.define("Ext.locale.ru.grid.locking.Lockable", {
+    override: "Ext.grid.locking.Lockable",
+    lockText: "鎖柱",
+    unlockText: "解鎖欄（解鎖）"
+});
+Ext.define("Ext.locale.ru.grid.filters.Filters", {
+    override: "Ext.grid.filters.Filters",
+    menuFilterText: "篩選"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Boolean", {
+    override: "Ext.grid.filters.filter.Boolean",
+    yesText: "是的",
+    noText: "不"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Date", {
+    override: "Ext.grid.filters.filter.Date",
+    config: {
+        fields: {
+            lt: {
+                text: '到'
+            },
+            gt: {
+                text: '後'
+            },
+            eq: {
+                text: '在'
+            }
+        },
+        // Defaults to Ext.Date.defaultFormat
+        dateFormat: null
+    }
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.List", {
+    override: "Ext.grid.filters.filter.List",
+    loadingText: "清單"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Number", {
+    override: "Ext.grid.filters.filter.Number",
+    emptyText: "輸入號碼"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.String", {
+    override: "Ext.grid.filters.filter.String",
+    emptyText: "輸入文字"
+});
+Ext.define("Ext.locale.ru.LoadMask", {
+    override: "Ext.LoadMask",
+    msg: "載入中..."
+});
+Ext.define("Ext.locale.ru.grid.RowEditor", {
+    override: "Ext.grid.RowEditor",
+    saveBtnText: 'Ok',
+    cancelBtnText: '取消',
+    errorsText: '錯誤',
+    dirtyText: '必填字段'
+});
+Ext.define("Ext.locale.ru.view.grid.button.Filter", {
+    override: "Ge.view.grid.button.Filter",
+    applyBtnText: '申請',
+    resetBtnText: '重置',
+});
+Ext.define("Ext.locale.ru.grid.PageSize", {
+    override: "Ge.view.plugin.PageSize",
+    displayText: '每頁貼文數'
+});
+Ext.define("Ext.locale.ru.view.form.Panel", {
+    override: "Ge.view.form.Panel",
+    msgFillFields: '您需要填寫字段'
+});

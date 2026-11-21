@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Navigasyon" },
+            "dashboard": { "title": "Araç Çubuğu" },
+            "tab": {
+                "close": { "tooltip": "Sekmeyi kapat" },
+                "next": { "tooltip": "Sonraki sekme" },
+                "prev": { "tooltip": "Önceki sekme" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Listeyi güncelle" },
+                "collapse": { "tooltip": "Liste öğelerini daralt" },
+                "expand": { "tooltip": "Liste öğelerini genişlet" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Silmek" },
+            "add": { "text": "Eklemek" }
+        }
+    }
+}

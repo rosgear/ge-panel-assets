@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Navegación" },
+            "dashboard": { "title": "Barra de herramientas" },
+            "tab": {
+                "close": { "tooltip": "Cerrar pestaña" },
+                "next": { "tooltip": "Pestaña siguiente" },
+                "prev": { "tooltip": "Pestaña anterior" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Lista de actualización" },
+                "collapse": { "tooltip": "Contraer elementos de la lista" },
+                "expand": { "tooltip": "Expandir elementos de la lista" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Borrar" },
+            "add": { "text": "Agregar" }
+        }
+    }
+}

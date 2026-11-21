@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Навігацыя" },
+            "dashboard": { "title": "Панэль інструментаў" },
+            "tab": {
+                "close": { "tooltip": "Закрыць укладку" },
+                "next": { "tooltip": "Наступная ўкладка" },
+                "prev": { "tooltip": "Папярэдняя ўкладка" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Абнавіць спіс" },
+                "collapse": { "tooltip": "Згарнуць элементы спісу" },
+                "expand": { "tooltip": "Разгарнуць элементы спісу" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Выдаліць" },
+            "add": { "text": "Дадаць" }
+        }
+    }
+}

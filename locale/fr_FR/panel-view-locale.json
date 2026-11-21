@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Navigation" },
+            "dashboard": { "title": "Barre d'outils" },
+            "tab": {
+                "close": { "tooltip": "Fermer l'onglet" },
+                "next": { "tooltip": "Onglet suivant" },
+                "prev": { "tooltip": "Onglet précédent" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Mettre à jour la liste" },
+                "collapse": { "tooltip": "Réduire les éléments de la liste" },
+                "expand": { "tooltip": "Développer les éléments de la liste" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Supprimer" },
+            "add": { "text": "Ajouter" }
+        }
+    }
+}

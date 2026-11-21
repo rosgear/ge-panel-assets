@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Navigazione" },
+            "dashboard": { "title": "Barra degli strumenti" },
+            "tab": {
+                "close": { "tooltip": "Chiudi scheda" },
+                "next": { "tooltip": "Scheda successiva" },
+                "prev": { "tooltip": "Scheda precedente" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Aggiorna elenco" },
+                "collapse": { "tooltip": "Comprimi gli elementi dell'elenco" },
+                "expand": { "tooltip": "Espandi gli elementi dell'elenco" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Eliminare" },
+            "add": { "text": "Aggiungere" }
+        }
+    }
+}

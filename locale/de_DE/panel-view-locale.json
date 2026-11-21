@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "Navigation" },
+            "dashboard": { "title": "Symbolleiste" },
+            "tab": {
+                "close": { "tooltip": "Tab schließen" },
+                "next": { "tooltip": "Nächste Registerkarte" },
+                "prev": { "tooltip": "Vorheriger Tab" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "Liste aktualisieren" },
+                "collapse": { "tooltip": "Listenelemente ausblenden" },
+                "expand": { "tooltip": "Listenelemente erweitern" }
+            }
+        },
+        "button": {
+            "delete": { "text": "Löschen" },
+            "add": { "text": "Hinzufügen" }
+        }
+    }
+}

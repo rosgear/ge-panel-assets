@@ -1,0 +1,106 @@
+/**
+ * Пакет белорусской локализации.
+ 
+ * Этот файл является частью GePanel.
+ *
+ * Copyright (c) 2026 RosGear
+ * 
+ * Contact: https://rosgear.ru/
+ *
+ * @author    Anton Tivonenko
+ * @copyright (c) 2026, by Anton Tivonenko, anton.tivonenko@rosgear.ru
+ * @date      Nov 01, 2026
+ * @version   $Id: 1.0 $
+ *
+ * @license panel-locale.js is licensed under the terms of the Open Source
+ * LGPL 3.0 license. Commercial use is permitted to the extent that the
+ * code/component(s) do NOT become part of another Open Source or Commercially
+ * development library or toolkit without explicit permission.
+ */
+
+Ext.onReady(function(){
+    if(Ext.Date){Ext.Date.monthNames=["Студзень","Люты","Сакавік","Красавік","Май","Чэрвень","Ліпеня","Аўгуст","Верасень","Кастрычнік","Лістапад","Снежань"];Ext.Date.shortMonthNames=["Студ","Лют","Сак","Кра","Май","Чер","Ліп","Аўг","Вер","Кас","Ліс","Сне"];Ext.Date.getShortMonthName=function(a){return Ext.Date.shortMonthNames[a]};Ext.Date.monthNumbers={"Студ":0,"Лют":1,"Сак":2,"Кра":3,"Май":4,"Чер":5,"Ліп":6,"Аўг":7,"Вер":8,"Кас":9,"Ліс":10,"Сне":11};Ext.Date.getMonthNumber=function(a){return Ext.Date.monthNumbers[a.substring(0,1).toUpperCase()+a.substring(1,3).toLowerCase()]};Ext.Date.dayNames=["Нядзеля","Панядзелак","Аўторак","Асяроддзе","Чацвер","Пятніца","Субота"];Ext.Date.getShortDayName=function(a){return Ext.Date.dayNames[a].substring(0,3)}}if(Ext.util&&Ext.util.Format){Ext.apply(Ext.util.Format,{thousandSeparator:".",decimalSeparator:",",currencySign:"\u0440\u0443\u0431",dateFormat:"d.m.Y"})}});
+Ext.define("Ext.locale.ru.view.View",{override:"Ext.view.View",emptyText:""});Ext.define("Ext.locale.ru.grid.plugin.DragDrop",{override:"Ext.grid.plugin.DragDrop",dragText:"{0} выбраных радкоў"});Ext.define("Ext.locale.ru.tab.Tab",{override:"Ext.tab.Tab",closeText:"Закрыць гэтую ўкладку"});Ext.define("Ext.locale.ru.form.field.Base",{override:"Ext.form.field.Base",invalidText:"Закрыць гэтую ўкладку"});Ext.define("Ext.locale.ru.view.AbstractView",{override:"Ext.view.AbstractView",loadingText:"Загрузка..."});Ext.define("Ext.locale.ru.picker.Date",{override:"Ext.picker.Date",todayText:"Сегодня",minText:"Гэтая дата раней за мінімальную дату",maxText:"Гэтая дата пазней максімальнай даты",disabledDaysText:"Недаступна",disabledDatesText:"Недаступна",nextText:"Наступны месяц (Control+Направа)",prevText:"Папярэдні месяц (Control+Налева)",monthYearText:"Выбар месяца (Control+Уверх/Уніз для выбару года)",todayTip:"{0} (Прабел)",format:"d.m.y",startDay:1});Ext.define("Ext.locale.ru.picker.Month",{override:"Ext.picker.Month",okText:"&#160;OK&#160;",cancelText:"Адмена"});Ext.define("Ext.locale.ru.toolbar.Paging",{override:"Ext.PagingToolbar",beforePageText:"Старонка",afterPageText:"из {0}",firstText:"Першая старонка",prevText:"Папярэдняя старонка",nextText:"Следующая страница",lastText:"Последняя страница",refreshText:"Обновить",displayMsg:"Отображаются записи с {0} по {1}, всего {2}",emptyMsg:"Нет данных для отображения"});Ext.define("Ext.locale.ru.form.field.Text",{override:"Ext.form.field.Text",minLengthText:"Минимальная длина этого поля {0}",maxLengthText:"Максимальная длина этого поля {0}",blankText:"Это поле обязательно для заполнения",regexText:"",emptyText:null});Ext.define("Ext.locale.ru.form.field.Number",{override:"Ext.form.field.Number",minText:"Значение этого поля не может быть меньше {0}",maxText:"Значение этого поля не может быть больше {0}",nanText:"{0} не является числом",negativeText:"Значение не может быть отрицательным"});Ext.define("Ext.locale.ru.form.field.Date",{override:"Ext.form.field.Date",disabledDaysText:"Недоступно",disabledDatesText:"Недаступна",minText:"Дата в этом поле должна быть позже {0}",maxText:"Дата в этом поле должна быть раньше {0}",invalidText:"{0} не является правильной датой - дата должна быть указана в формате {1}",format:"d.m.y",altFormats:"d.m.y|d/m/Y|d-m-y|d-m-Y|d/m|d-m|dm|dmy|dmY|d|Y-m-d"});Ext.define("Ext.locale.ru.form.field.ComboBox",{override:"Ext.form.field.ComboBox",valueNotFoundText:undefined},function(){Ext.apply(Ext.form.field.ComboBox.prototype.defaultListConfig,{loadingText:"Загрузка..."})});Ext.define("Ext.locale.ru.form.field.VTypes",{override:"Ext.form.field.VTypes",emailText:'Гэтае поле павінна змяшчаць адрас электроннай пошты ў фармаце "user@example.com"',urlText:'Гэтае поле павінна змяшчаць URL у фармаце "http://www.example.com"',alphaText:'Гэта поле павінна ўтрымліваць толькі лацінскія літары і сімвал ніжняга падкрэслівання "_"',alphanumText:'Гэта поле павінна ўтрымліваць толькі лацінскія літары, лічбы і сімвал падкрэслівання "_"'});Ext.define("Ext.locale.ru.form.field.HtmlEditor",{override:"Ext.form.field.HtmlEditor",createLinkText:"Калі ласка, увядзіце адрас:"},function(){Ext.apply(Ext.form.field.HtmlEditor.prototype,{buttonTips:{bold:{title:"Паўтлусты (Ctrl+B)",text:"Ужыванне паўтлустага напісання да вылучанага тэксту.",cls:Ext.baseCSSPrefix+"html-editor-tip"},italic:{title:"Курсіў (Ctrl+I)",text:"Ужыванне курсіўнага напісання да вылучанага тэксту.",cls:Ext.baseCSSPrefix+"html-editor-tip"},underline:{title:"Падкрэслены (Ctrl+U)",text:"Падкрэсліванне выдзеленага тэксту.",cls:Ext.baseCSSPrefix+"html-editor-tip"},increasefontsize:{title:"Павялічыць памер",text:"Павелічэнне памеру шрыфта.",cls:Ext.baseCSSPrefix+"html-editor-tip"},decreasefontsize:{title:"Зменшыць памер",text:"Памяншэнне памеру шрыфта.",cls:Ext.baseCSSPrefix+"html-editor-tip"},backcolor:{title:"Заливка",text:"Змяненне колеру фону для выдзеленага тэксту або абзаца.",cls:Ext.baseCSSPrefix+"html-editor-tip"},forecolor:{title:"Колер тэксту",text:"Змяненне колеру тэксту.",cls:Ext.baseCSSPrefix+"html-editor-tip"},justifyleft:{title:"Выраўнаваць тэкст па левым краі",text:"Выраўноўванне тэксту па левым краі.",cls:Ext.baseCSSPrefix+"html-editor-tip"},justifycenter:{title:"По центру",text:"Выраўноўванне тэксту па цэнтры.",cls:Ext.baseCSSPrefix+"html-editor-tip"},justifyright:{title:"Выровнять текст по правому краю",text:"Выраўноўванне тэксту па правым краі.",cls:Ext.baseCSSPrefix+"html-editor-tip"},insertunorderedlist:{title:"Маркеры",text:"Пачаць маркіраваны спіс.",cls:Ext.baseCSSPrefix+"html-editor-tip"},insertorderedlist:{title:"Нумерация",text:"Пачаць нумараваны спіс.",cls:Ext.baseCSSPrefix+"html-editor-tip"},createlink:{title:"Уставіць гіперспасылку",text:"Стварэнне спасылкі з выдзеленага тэксту.",cls:Ext.baseCSSPrefix+"html-editor-tip"},sourceedit:{title:"Зыходны код",text:"Пераключыцца на зыходны код.",cls:Ext.baseCSSPrefix+"html-editor-tip"}}})});Ext.define("Ext.locale.ru.form.Basic",{override:"Ext.form.Basic",waitTitle:"Калі ласка, пачакайце..."});Ext.define("Ext.locale.ru.grid.header.Container",{override:"Ext.grid.header.Container",sortAscText:"Сартаваць па ўзрастанні",sortDescText:"Сартаваць па змяншэнні",lockText:"Замацаваць слупок",unlockText:"Зняць замацаванне слупка",columnsText:"Столбцы"});Ext.define("Ext.locale.ru.grid.GroupingFeature",{override:"Ext.grid.feature.Grouping",emptyGroupText:"(Пусто)",groupByText:"Групаваць па гэтым полі",showGroupsText:"Адлюстроўваць па групах"});Ext.define("Ext.locale.ru.grid.PropertyColumnModel",{override:"Ext.grid.PropertyColumnModel",nameText:"Назва",valueText:"Значэнне",dateFormat:"d.m.Y"});Ext.define("Ext.locale.ru.window.MessageBox",{override:"Ext.window.MessageBox",buttonText:{ok:"OK",cancel:"Адмена",yes:"Так",no:"Не"}});Ext.define("Ext.locale.ru.form.field.File",{override:"Ext.form.field.File",buttonText:"Агляд..."});Ext.define("Ext.locale.ru.Component",{override:"Ext.Component"});
+
+Ext.Txt = {
+    message: 'Паведамленне', 
+    confirmation: 'Пацвярджэнне', 
+    warning: 'Папярэджанне', 
+    error: 'Памылка', 
+    errorConnect: 'Памылка злучэння', 
+    loading: 'Загрузка...', 
+    waiting: 'Калі ласка пачакайце...', 
+    sendErrorReport: '<div class="g-message-box__report">Адправіць памылку ў тэхнічную падтрымку?</div>', 
+    serverDidNotAnswer: 'Наш ваш запыт, сервер не даў адказу (памылка сервера або запыт страчаны).', 
+    serverErrorConnection: 'Памылка злучэння з серверам можа ўзнікнуць з-за нестабільнага падключэння да сеткі або адсутнасці сувязі з серверам. Паўтарыце спробу пазней.'
+};
+
+
+Ext.define("Ext.locale.ru.grid.locking.Lockable", {
+    override: "Ext.grid.locking.Lockable",
+    lockText: "Заблакаваць слупок", 
+    unlockText: "Разблакаваць слупок (разблакаваць)"
+});
+Ext.define("Ext.locale.ru.grid.filters.Filters", {
+    override: "Ext.grid.filters.Filters",
+    menuFilterText: "Фільтр"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Boolean", {
+    override: "Ext.grid.filters.filter.Boolean",
+    yesText: "Так",
+    noText: "Не"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Date", {
+    override: "Ext.grid.filters.filter.Date",
+    config: {
+        fields: {
+            lt: {
+                text: 'Да'
+            },
+            gt: {
+                text: 'Пасля'
+            },
+            eq: {
+                text: 'На'
+            }
+        },
+        // Defaults to Ext.Date.defaultFormat
+        dateFormat: null
+    }
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.List", {
+    override: "Ext.grid.filters.filter.List",
+    loadingText: "Спіс"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Number", {
+    override: "Ext.grid.filters.filter.Number",
+    emptyText: "Увядзіце лік"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.String", {
+    override: "Ext.grid.filters.filter.String",
+    emptyText: "Увядзіце тэкст"
+});
+Ext.define("Ext.locale.ru.LoadMask", {
+    override: "Ext.LoadMask",
+    msg: "Загрузка..."
+});
+Ext.define("Ext.locale.ru.grid.RowEditor", {
+    override: "Ext.grid.RowEditor",
+    saveBtnText: 'Ok',
+    cancelBtnText: 'Адмена',
+    errorsText: 'Памылка',
+    dirtyText: 'Неабходна запоўніць поле'
+});
+Ext.define("Ext.locale.ru.view.grid.button.Filter", {
+    override: "Ge.view.grid.button.Filter",
+    applyBtnText: 'Ужыць',
+    resetBtnText: 'Скінуць',
+});
+Ext.define("Ext.locale.ru.grid.PageSize", {
+    override: "Ge.view.plugin.PageSize",
+    displayText: 'Запісаў на старонцы'
+});
+Ext.define("Ext.locale.ru.view.form.Panel", {
+    override: "Ge.view.form.Panel",
+    msgFillFields: 'Вам неабходна запоўніць палі'
+});

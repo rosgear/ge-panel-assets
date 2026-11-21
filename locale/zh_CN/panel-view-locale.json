@@ -1,0 +1,22 @@
+{
+    "locale": {
+        "main": {
+            "navigation": { "title": "導航" },
+            "dashboard": { "title": "工具列" },
+            "tab": {
+                "close": { "tooltip": "關閉選項卡" },
+                "next": { "tooltip": "下一個選項卡" },
+                "prev": { "tooltip": "上一個選項卡" }
+            },
+            "tree": {
+                "refresh": { "tooltip": "更新列表" },
+                "collapse": { "tooltip": "折疊列表項" },
+                "expand": { "tooltip": "展開列表項" }
+            }
+        },
+        "button": {
+            "delete": { "text": "刪除" },
+            "add": { "text": "添加" }
+        }
+    }
+}

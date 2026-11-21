@@ -1,0 +1,339 @@
+/**
+ * Пакет французской локализации.
+ 
+ * Этот файл является частью GePanel.
+ *
+ * Copyright (c) 2026 RosGear
+ * 
+ * Contact: https://rosgear.ru/
+ *
+ * @author    Anton Tivonenko
+ * @copyright (c) 2026, by Anton Tivonenko, anton.tivonenko@rosgear.ru
+ * @date      Nov 01, 2026
+ * @version   $Id: 1.0 $
+ *
+ * @license panel-locale.js is licensed under the terms of the Open Source
+ * LGPL 3.0 license. Commercial use is permitted to the extent that the
+ * code/component(s) do NOT become part of another Open Source or Commercially
+ * development library or toolkit without explicit permission.
+ */
+
+Ext.onReady(function(){
+    if(Ext.Date) {
+        Ext.Date.monthNames = [ 
+            "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+        ];
+        Ext.Date.shortMonthNames = [
+            "Janv","Févr","Mars","Avr","Mai","Juin","Juil","Août","Sept","Oct","Nov","Déc"
+        ];
+        Ext.Date.getShortMonthName = function(a){return Ext.Date.shortMonthNames[a]};
+        Ext.Date.monthNumbers = {"Janv":0,"Févr":1,"Mars":2,"Avr":3,"Mai":4,"Juin":5,"Juil":6,"Août":7,"Sept":8,"Oct":9,"Nov":10,"Déc":11};
+        Ext.Date.getMonthNumber = function(a){return Ext.Date.monthNumbers[a.substring(0,1).toUpperCase()+a.substring(1,3).toLowerCase()]};
+        Ext.Date.dayNames = [
+            "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"
+        ];
+        Ext.Date.getShortDayName = function(a){
+            return Ext.Date.dayNames[a].substring(0,3)
+        }
+    }
+    if(Ext.util&&Ext.util.Format) {
+        Ext.apply(Ext.util.Format, {
+            thousandSeparator:".",
+            decimalSeparator:",",
+            currencySign:"\u0440\u0443\u0431",
+            dateFormat:"d.m.Y"
+        });
+    }
+});
+
+Ext.define("Ext.locale.ru.view.View",{
+    override:"Ext.view.View",
+    emptyText:""
+});
+Ext.define("Ext.locale.ru.grid.plugin.DragDrop",{
+    override:"Ext.grid.plugin.DragDrop",
+    dragText:"{0} lignes sélectionnées"
+});
+Ext.define("Ext.locale.ru.tab.Tab",{
+    override:"Ext.tab.Tab",
+    closeText:"Fermez cet onglet"
+});
+Ext.define("Ext.locale.ru.form.field.Base",{
+    override:"Ext.form.field.Base",
+    invalidText:"La valeur dans ce champ est incorrecte"
+});
+Ext.define("Ext.locale.ru.view.AbstractView",{
+    override:"Ext.view.AbstractView",
+    loadingText:"Chargement..."
+});
+Ext.define("Ext.locale.ru.picker.Date",{
+    override:"Ext.picker.Date",
+    todayText:"Aujourd'hui",
+    minText:"Cette date est antérieure à la date minimale",
+    maxText:"Cette date est postérieure à la date maximale",
+    disabledDaysText:"Pas disponible",
+    disabledDatesText:"Pas disponible",
+    nextText:"Le mois prochain (Ctrl+Droite)",
+    prevText:"Mois précédent (Ctrl+Gauche)",
+    monthYearText:"Sélectionnez le mois (Ctrl + Haut/Bas pour sélectionner l'année)",
+    todayTip:"{0} (Espace)",
+    format:"d.m.y",
+    startDay:1
+});
+Ext.define("Ext.locale.ru.picker.Month",{
+    override:"Ext.picker.Month",
+    okText:"&#160;OK&#160;",
+    cancelText:"Annuler"
+});
+Ext.define("Ext.locale.ru.toolbar.Paging",{
+    override:"Ext.PagingToolbar",
+    beforePageText:"Page",
+    afterPageText:"à partir de {0}",
+    firstText:"Première page",
+    prevText:"Page précédente",
+    nextText:"Page suivante",
+    lastText:"Dernière page",
+    refreshText:"Mise à jour",
+    displayMsg:"Affichage des enregistrements de {0} à {1}, total {2}",
+    emptyMsg:"Aucune donnée à afficher"
+});
+Ext.define("Ext.locale.ru.form.field.Text",{
+    override:"Ext.form.field.Text",
+    minLengthText:"La longueur minimale de ce champ est {0}",
+    maxLengthText:"La longueur maximale de ce champ est de {0}",
+    blankText:"Ce champ est obligatoire",
+    regexText:"",
+    emptyText:null
+});
+Ext.define("Ext.locale.ru.form.field.Number",{
+    override:"Ext.form.field.Number",
+    minText:"La valeur de ce champ ne peut pas être inférieure à {0}",
+    maxText:"La valeur de ce champ ne peut pas être supérieure à {0}",
+    nanText:"{0} n\'est pas un nombre",
+    negativeText:"La valeur ne peut pas être négative"
+});
+Ext.define("Ext.locale.ru.form.field.Date",{
+    override:"Ext.form.field.Date",
+    disabledDaysText:"Pas disponible",
+    disabledDatesText:"Pas disponible",
+    minText:"La date dans ce champ doit être postérieure à {0}",
+    maxText:"La date dans ce champ doit être antérieure au {0}",
+    invalidText:"{0} n\'est pas une date valide: la date doit être au format {1}",
+    format:"d.m.y",
+    altFormats:"d.m.y|d/m/Y|d-m-y|d-m-Y|d/m|d-m|dm|dmy|dmY|d|Y-m-d"
+});
+Ext.define("Ext.locale.ru.form.field.ComboBox",{
+    override:"Ext.form.field.ComboBox",
+    valueNotFoundText:undefined
+}, function(){
+    Ext.apply(Ext.form.field.ComboBox.prototype.defaultListConfig,{
+        loadingText:"Chargement..."
+    })
+});
+Ext.define("Ext.locale.ru.form.field.VTypes",{
+    override:"Ext.form.field.VTypes",
+    emailText:'Ce champ doit contenir une adresse email au format "user@example.com"',
+    urlText:'Ce champ doit contenir une URL au format "http://www.example.com"',
+    alphaText:'Ce champ doit contenir uniquement des lettres latines et le caractère de soulignement "_"',
+    alphanumText:'Ce champ doit contenir uniquement des lettres latines, des chiffres et le caractère de soulignement "_".'
+});
+Ext.define("Ext.locale.ru.form.field.HtmlEditor",{
+    override:"Ext.form.field.HtmlEditor",
+    createLinkText:"Veuillez saisir votre adresse:"
+}, function(){
+    Ext.apply(Ext.form.field.HtmlEditor.prototype,{
+        buttonTips:{
+            bold:{
+                title:"Audacieux (Ctrl+B)",
+                text:"Appliquer du gras au texte sélectionné.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            italic:{
+                title:"Italique (Ctrl+I)",
+                text:"Appliquer le style italique au texte sélectionné.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            underline:{
+                title:"Souligné (Ctrl+U)",
+                text:"Souligner le texte sélectionné.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            increasefontsize:{
+                title:"Augmenter la taille",
+                text:"Augmenter la taille de la police.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            decreasefontsize:{
+                title:"Réduire la taille",
+                text:"Diminuer la taille de la police.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            backcolor:{
+                title:"Remplir",
+                text:"Changer la couleur d'arrière-plan du texte ou du paragraphe sélectionné.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            forecolor:{
+                title:"Couleur du texte",
+                text:"Changer la couleur du texte.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            justifyleft:{
+                title:"Aligner le texte à gauche",
+                text:"Aligner le texte à gauche.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            justifycenter:{
+                title:"Centré",
+                text:"Aligner le texte au centre.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            justifyright:{
+                title:"Aligner le texte à droite",
+                text:"Aligner le texte à droite.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"
+            },
+            insertunorderedlist:{
+                title:"Marqueurs",
+                text:"Démarrer la liste à puces.",
+                cls:Ext.baseCSSPrefix+"html-editor-tip"},
+                insertorderedlist:{
+                    title:"Numérotage",
+                    text:"Commencer une liste numérotée.",
+                    cls:Ext.baseCSSPrefix+"html-editor-tip"
+                },
+                createlink:{
+                    title:"Insérer un lien hypertexte",
+                    text:"Créer un lien à partir du texte sélectionné.",
+                    cls:Ext.baseCSSPrefix+"html-editor-tip"
+                },
+                sourceedit:{
+                    title:"Code source",
+                    text:"Passer au code source.",
+                    cls:Ext.baseCSSPrefix+"html-editor-tip"
+                }
+            }
+        }
+    )
+});
+Ext.define("Ext.locale.ru.form.Basic",{
+    override:"Ext.form.Basic",
+    waitTitle:"S\'il vous plaît, attendez..."
+});
+Ext.define("Ext.locale.ru.grid.header.Container",{
+    override:"Ext.grid.header.Container",
+    sortAscText:"Trier par ordre croissant",
+    sortDescText:"Trier par ordre décroissant",
+    lockText:"Geler la colonne",
+    unlockText:"Dégeler une colonne",
+    columnsText:"Colonnes"
+});
+Ext.define("Ext.locale.ru.grid.GroupingFeature",{
+    override:"Ext.grid.feature.Grouping",
+    emptyGroupText:"(Vide)",
+    groupByText:"Regrouper par ce champ",
+    showGroupsText:"Affichage par groupes"
+});
+Ext.define("Ext.locale.ru.grid.PropertyColumnModel",{
+    override:"Ext.grid.PropertyColumnModel",
+    nameText:"Nom",
+    valueText:"Signification",
+    dateFormat:"d.m.Y"
+});
+Ext.define("Ext.locale.ru.window.MessageBox",{
+    override:"Ext.window.MessageBox",
+    buttonText:{
+        ok:"OK",
+        cancel:"Annuler",
+        yes:"Oui",
+        no:"Non"
+    }});
+Ext.define("Ext.locale.ru.form.field.File",{
+    override:"Ext.form.field.File",
+    buttonText:"Revoir..."
+});
+Ext.define("Ext.locale.ru.Component",{
+    override:"Ext.Component"
+});
+
+Ext.Txt = {
+    message: 'Message',
+    confirmation: 'Confirmation',
+    warning: 'Avertissement',
+    error: 'Erreur',
+    errorConnect: 'Erreur de connexion',
+    loading: 'Chargement...',
+    waiting: 'S\'il vous plaît, attendez...',
+    sendErrorReport: '<div class="g-message-box__report">Soumettre un bug au support technique?</div>',
+    serverDidNotAnswer: 'Notre demande, le serveur n\'a pas répondu (erreur serveur ou demande perdue).',
+    serverErrorConnection: 'Une erreur de connexion au serveur peut survenir en raison d\'une connexion réseau instable ou d\'un manque de communication avec le serveur. Veuillez réessayer plus tard.'
+};
+
+Ext.define("Ext.locale.ru.grid.locking.Lockable", {
+    override: "Ext.grid.locking.Lockable",
+    lockText: "Colonne de verrouillage",
+    unlockText: "Déverrouiller la colonne (déverrouiller)"
+});
+Ext.define("Ext.locale.ru.grid.filters.Filters", {
+    override: "Ext.grid.filters.Filters",
+    menuFilterText: "Filtre"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Boolean", {
+    override: "Ext.grid.filters.filter.Boolean",
+    yesText: "Oui",
+    noText: "Non"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Date", {
+    override: "Ext.grid.filters.filter.Date",
+    config: {
+        fields: {
+            lt: {
+                text: 'À'
+            },
+            gt: {
+                text: 'Après'
+            },
+            eq: {
+                text: 'Sur'
+            }
+        },
+        // Defaults to Ext.Date.defaultFormat
+        dateFormat: null
+    }
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.List", {
+    override: "Ext.grid.filters.filter.List",
+    loadingText: "Liste"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.Number", {
+    override: "Ext.grid.filters.filter.Number",
+    emptyText: "Entrez le numéro"
+});
+Ext.define("Ext.locale.ru.grid.filters.filter.String", {
+    override: "Ext.grid.filters.filter.String",
+    emptyText: "Saisir du texte"
+});
+Ext.define("Ext.locale.ru.LoadMask", {
+    override: "Ext.LoadMask",
+    msg: "Chargement..."
+});
+Ext.define("Ext.locale.ru.grid.RowEditor", {
+    override: "Ext.grid.RowEditor",
+    saveBtnText: 'Ok',
+    cancelBtnText: 'Annuler',
+    errorsText: 'Erreur',
+    dirtyText: 'Champ obligatoire'
+});
+Ext.define("Ext.locale.ru.view.grid.button.Filter", {
+    override: "Ge.view.grid.button.Filter",
+    applyBtnText: 'Appliquer',
+    resetBtnText: 'Réinitialiser',
+});
+Ext.define("Ext.locale.ru.grid.PageSize", {
+    override: "Ge.view.plugin.PageSize",
+    displayText: 'Articles par page'
+});
+Ext.define("Ext.locale.ru.view.form.Panel", {
+    override: "Ge.view.form.Panel",
+    msgFillFields: 'Vous devez remplir les champs'
+});
