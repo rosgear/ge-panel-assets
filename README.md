@@ -31,7 +31,7 @@ php composer.phar require rosgear/ge-panel-assets "*"
 
 в раздел "require" вашего файла `composer.json`.
 
-Панель управления будет установлена в директорию `/public/vendors/ge/panel` вашего веб-приложения RosGear.
+Панель управления будет установлена в директорию `/public/vendors/ge/panel` вашего веб-приложения РосГир.
 
 <a name="english"></a>
 ## GePanel Control Panel resources
